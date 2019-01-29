@@ -16,6 +16,9 @@ RCT_EXPORT_METHOD(send: (NSString*)name :(NSDictionary*)args){
   [NewRelicAgent recordEvent:name attributes:args];
 }
 
+RCT_EXPORT_METHOD(sendCustom: (NSString*)type :(NSString*)name :(NSDictionary*)args){
+    [NewRelicAgent recordCustomEvent:type name:name attributes:args];
+}
 
 RCT_EXPORT_METHOD(setAttribute: (NSString*)name: (NSString*)value){
   [NewRelicAgent setAttribute:name value:value];
@@ -27,3 +30,4 @@ RCT_EXPORT_METHOD(nativeLog:(NSString *)msg){
 }
 
 @end
+
