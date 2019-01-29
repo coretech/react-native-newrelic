@@ -24,6 +24,11 @@ public class RNNewRelic extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void sendCustom(String type, String name, ReadableMap eventAttributes) {
+        NewRelic.recordCustomEvent(type, name, RNUtils.toHashMap((ReadableNativeMap) eventAttributes));
+    }
+
+    @ReactMethod
     public void setAttribute(String name, String value) {
         NewRelic.setAttribute(name , value);
     }

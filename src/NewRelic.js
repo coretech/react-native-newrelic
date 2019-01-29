@@ -101,6 +101,16 @@ class NewRelic {
     });
     RNNewRelic.send(nameStr, argsStr);
   }
+
+  sendCustom(type, name, args) {
+    const typeStr = String(type);
+    const nameStr = String(name);
+    const argsStr = {};
+    _.forEach(args, (value, key) => {
+      argsStr[String(key)] = String(value);
+    });
+    RNNewRelic.sendCustom(typeStr, nameStr, argsStr);
+  }
 }
 
 export default new NewRelic();
