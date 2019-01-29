@@ -86,6 +86,10 @@ class NewRelic {
     this.send(eventName, args);
   }
 
+  reportCustom(eventType, eventName, args) {
+    this.send(eventType, eventName, args);
+  }
+
   /*
    logs a message to the native console (useful when running in release mode)
   */
