@@ -87,7 +87,7 @@ class NewRelic {
   }
 
   reportCustom(eventType, eventName, args) {
-    this.send(eventType, eventName, args);
+    this.sendCustom(eventType, eventName, args);
   }
 
   /*
